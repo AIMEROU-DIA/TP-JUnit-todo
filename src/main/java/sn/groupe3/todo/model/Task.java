@@ -1,22 +1,28 @@
 package sn.groupe3.todo.model;
 
-
 import jakarta.persistence.*;
 
-@Entity
+@Entity   // Indique que cette classe représente une table en base de données
 public class Task {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id   // Clé primaire
+    @GeneratedValue(strategy = GenerationType.IDENTITY)  // Auto-incrémentation
     private Long id;
 
+    // Titre de la tâche
     private String title;
+
+    // Description de la tâche
     private String description;
+
+    // Indique si la tâche est terminée ou non
     private boolean completed;
 
+    // Constructeur vide obligatoire pour JPA
     public Task() {
     }
 
+    // Constructeur pour créer rapidement une tâche
     public Task(String title, String description, boolean completed) {
         this.title = title;
         this.description = description;
